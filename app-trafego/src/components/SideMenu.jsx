@@ -1,7 +1,10 @@
 import './SideMenu.css'
 import { NavLink } from 'react-router-dom'
+import { useAuth } from '../contexts/AuthContext'
 
 export default function SideMenu() {
+  const { user, logout } = useAuth()
+
   return (
     <nav className="side-menu" aria-label="Main navigation">
       <div className="side-menu__brand">MENU</div>
@@ -32,7 +35,17 @@ export default function SideMenu() {
           </NavLink>
         </li>
       </ul>
-      <div className="side-menu__footer">v0.1</div>
+      <div className="side-menu__footer">
+        {user && (
+          <div className="user-info">
+            <span className="user-name">{user.name}</span>
+            <span className="user-role">{user.role}</span>
+          </div>
+        )}
+        <button onClick={logout} className="logout-button">
+          Sair
+        </button>
+      </div>
     </nav>
   )
 }
