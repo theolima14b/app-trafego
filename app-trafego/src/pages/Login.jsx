@@ -43,24 +43,25 @@ export default function Login() {
         {error && <div className="error-message">{error}</div>}
         
         <div className="form-group">
-          <label htmlFor="username">Usuário</label>
           <input
             type="text"
             id="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
+            placeholder="Usuário"
+            autoComplete="username"
           />
         </div>
-        
         <div className="form-group">
-          <label htmlFor="password">Senha</label>
           <input
             type="password"
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            placeholder="Senha"
+            autoComplete="current-password"
           />
         </div>
         

@@ -42,6 +42,10 @@
 }
 
 /* Layout for side menu + main content */
+body {
+  /* Garante que o header não sobreponha o conteúdo */
+  padding-top: 56px;
+}
 .app-layout {
   display: flex;
   min-height: 100vh;
@@ -53,6 +57,11 @@
   box-sizing: border-box;
   max-width: 1280px;
   margin: 0 auto;
+}
+@media (max-width: 640px) {
+  body {
+    padding-top: 48px;
+  }
 }
 
 /* When the side menu is fixed, push the main content to the right */

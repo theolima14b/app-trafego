@@ -1,5 +1,6 @@
 import './App.css'
 import SideMenu from './components/SideMenu'
+import Header from './components/Header'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Home from './pages/Home'
 import Dashboard from './pages/Dashboard'
@@ -20,6 +21,7 @@ function App() {
           {/* Rotas protegidas */}
           <Route path="/" element={
             <PrivateRoute>
+              <Header />
               <div className="app-layout">
                 <SideMenu />
                 <main className="main-content">

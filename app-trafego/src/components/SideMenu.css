@@ -1,24 +1,113 @@
+/* Menu fixo desktop */
 .side-menu {
   width: 220px;
   min-width: 180px;
   background: linear-gradient(180deg,#0f1720 0%, #111827 100%);
   color: #e6eef8;
-  height: 100vh;
-  padding: 1rem 0.5rem;
+  height: calc(100vh - 64px);
+  padding: 0.5rem;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  position: fixed; /* fixed to left side */
+  position: fixed;
   left: 0;
-  top: 0;
+  top: 64px;
   z-index: 1000;
+}
+.side-menu--desktop {
+  display: block;
+}
+/* Drawer overlay e container */
+.side-menu__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.35);
+  z-index: 2000;
+  display: flex;
+  align-items: stretch;
+}
+.side-menu__drawer-container {
+  width: 75vw;
+  max-width: 320px;
+  min-width: 180px;
+  background: linear-gradient(180deg,#0f1720 0%, #111827 100%);
+  color: #e6eef8;
+  height: calc(100vh - 48px);
+  margin-top: 48px;
+  box-shadow: 2px 0 16px 0 rgba(0,0,0,0.12);
+  animation: slideInMenu 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+@keyframes slideInMenu {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+.side-menu__drawer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+/* Hamburger button */
+.side-menu__hamburger {
+  display: none;
+  position: fixed;
+  top: 0.9rem;
+  left: 0.9rem;
+  z-index: 2100;
+  width: 36px;
+  background: none;
+  border: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+  box-shadow: none;
+}
+.hamburger-bar {
+  width: 22px;
+  height: 3px;
+  background: #fff;
+  margin: 3px 0;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+.hamburger-bar--light {
+  background: #fff !important;
+  box-shadow: 0 0 2px #fff;
+}
+/* Esconde hamburger fora do header */
+.side-menu__hamburger {
+  display: none !important;
+}
+@media (max-width: 900px) {
+  .main-header__hamburger {
+    display: flex !important;
+    position: absolute;
+    left: 1vw;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    z-index: 1200;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    box-shadow: none;
+    align-items: center;
+    justify-content: center;
+  }
 }
 .side-menu__brand {
   font-weight: 700;
   padding: 0.75rem 1rem;
   font-size: 1rem;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid #FFFFFF;
 }
 .side-menu__list {
   list-style: none;
@@ -43,7 +132,7 @@
 .side-menu__footer {
   padding: 0.5rem 1rem;
   margin-top: auto;
-  border-top: 1px solid rgba(255,255,255,0.04);
+  border-top: 1px solid #FFFFFF;
 }
 
 .user-info {
@@ -66,33 +155,46 @@
 
 .logout-button {
   width: 100%;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid #FFFFFF;
   color: #fff;
-  padding: 0.5rem;
-  border-radius: 4px;
+  padding: 0.75rem;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s ease;
   font-size: 0.85rem;
+  font-weight: 500;
   text-align: center;
+  letter-spacing: 0.02em;
 }
 
 .logout-button:hover {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.15);
+  border-color: #FFFFFF;
+  box-shadow: 0 0 8px rgba(255,255,255,0.1);
 }
 
 /* Responsive: collapse to top on narrow viewports */
-@media (max-width: 640px) {
+@media (max-width: 900px) {
   .side-menu {
-    position: static; /* flow with document on small screens */
-    width: 100%;
-    height: auto;
-    flex-direction: row;
-    align-items: center;
-    padding: 0.5rem;
+    width: 180px;
+    min-width: 120px;
   }
-  .side-menu__brand { padding: 0 0.5rem; }
-  .side-menu__list { display: flex; gap: 0.25rem; }
-  .side-menu__list li a { padding: 0.5rem 0.65rem; }
-  .side-menu__footer { display: none; }
+}
+
+@media (max-width: 640px) {
+  .side-menu--desktop {
+    display: none !important;
+  }
+  .side-menu__hamburger {
+    display: flex;
+  }
+  .side-menu__drawer-container {
+    min-width: 0;
+    width: 68vw;
+    max-width: 260px;
+  }
+  .side-menu__footer {
+    display: block;
+  }
 }
