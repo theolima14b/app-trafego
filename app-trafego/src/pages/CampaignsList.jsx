@@ -1,4 +1,4 @@
-import '../App.css'
+
 
 export default function CampaignsList() {
   return (

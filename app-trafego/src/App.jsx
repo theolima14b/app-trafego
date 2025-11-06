@@ -1,4 +1,3 @@
-import './App.css'
 import SideMenu from './components/SideMenu'
 import Header from './components/Header'
 import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom'
@@ -18,9 +17,9 @@ function ProtectedLayout() {
   return (
     <>
       <Header />
-      <div className="app-layout">
+      <div className="flex items-stretch">
         <SideMenu />
-        <main className="main-content">
+        <main className="flex-1 p-8 ml-[220px] max-[900px]:ml-[180px] max-[640px]:ml-0 max-[640px]:p-4">
           <Outlet />
         </main>
       </div>
