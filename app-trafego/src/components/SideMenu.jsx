@@ -108,7 +108,7 @@ export default function SideMenu() {
         
         <li>
           <NavLink 
-            to="/about" 
+            to="/crm" 
             className={({ isActive }) => `block px-4 py-2.5 rounded-md no-underline transition-all ${
               isActive 
                 ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white' 

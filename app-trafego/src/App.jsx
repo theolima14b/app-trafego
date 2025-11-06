@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Reports from './pages/Reports'
 import Settings from './pages/Settings'
 import About from './pages/About'
+import CRM from './pages/CRM'
 import UTMGenerator from './pages/UTMGenerator'
 import CampaignAnalysis from './pages/CampaignAnalysis'
 import CopyCreator from './pages/CopyCreator'
@@ -47,6 +48,7 @@ function App() {
             <Route path="reports" element={<Reports />} />
             <Route path="settings" element={<Settings />} />
             <Route path="about" element={<About />} />
+            <Route path="crm" element={<CRM />} />
           </Route>
 
           {/* Redireciona qualquer outra rota para home */}

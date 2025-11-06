@@ -14,7 +14,9 @@
     padding-top: 56px;
     min-width: 320px;
     min-height: 100vh;
-    background: #f5f7fa;
+  /* Neutral gray background with clear contrast from the menus (menus ~ gray-900) */
+  background: #262626; /* tailwind neutral-800 */
+  color: #e5e7eb; /* light gray text for readability */
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

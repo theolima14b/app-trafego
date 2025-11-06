@@ -151,16 +151,16 @@ export default function CampaignAnalysis() {
   // Render Dashboard view when row is selected
   if (selectedRow) {
     return (
-      <div className="max-w-[1400px] w-full mx-auto space-y-6">
+  <div className="max-w-[1400px] w-full mx-auto space-y-6">
         {/* Header with back button */}
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900 mb-1">Dashboard de Performance</h1>
-            <p className="text-sm text-gray-600">Análise detalhada do registro selecionado</p>
+            <h1 className="text-2xl font-bold text-gray-100 mb-1">Dashboard de Performance</h1>
+            <p className="text-sm text-gray-400">Análise detalhada do registro selecionado</p>
           </div>
           <button
             onClick={() => setSelectedRow(null)}
-            className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+            className="px-4 py-2 text-sm font-medium text-gray-200 bg-gray-800 border border-gray-700 rounded-md hover:bg-gray-700 transition-colors"
           >
             ← Voltar para lista
           </button>
@@ -246,16 +246,16 @@ export default function CampaignAnalysis() {
   return (
     <div className="max-w-[1400px] w-full mx-auto">
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">Análise de Campanha</h1>
-        <p className="text-sm text-gray-600">Faça upload de um arquivo CSV e clique em uma linha para visualizar o dashboard de performance</p>
+        <h1 className="text-2xl font-bold text-gray-100 mb-2">Análise de Campanha</h1>
+        <p className="text-sm text-gray-400">Faça upload de um arquivo CSV e clique em uma linha para visualizar o dashboard de performance</p>
       </div>
 
       {!csvData ? (
         <div
           className={`border-2 border-dashed rounded-xl p-12 text-center transition-all ${
             dragActive 
-              ? 'border-blue-500 bg-blue-50' 
-              : 'border-gray-300 bg-white hover:border-gray-400'
+              ? 'border-blue-500 bg-blue-900/20' 
+              : 'border-gray-700 bg-gray-900 hover:border-gray-500'
           }`}
           onDragEnter={handleDrag}
           onDragLeave={handleDrag}
@@ -265,8 +265,8 @@ export default function CampaignAnalysis() {
           <svg className="mx-auto h-12 w-12 text-gray-400 mb-4" stroke="currentColor" fill="none" viewBox="0 0 48 48">
             <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-          <div className="flex text-sm text-gray-600 justify-center mb-2">
-            <label htmlFor="file-upload" className="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500">
+          <div className="flex text-sm text-gray-400 justify-center mb-2">
+            <label htmlFor="file-upload" className="relative cursor-pointer rounded-md font-medium text-blue-400 hover:text-blue-300">
               <span>Selecione um arquivo</span>
               <input 
                 id="file-upload" 
@@ -284,22 +284,22 @@ export default function CampaignAnalysis() {
       ) : (
         <div className="space-y-6">
           {/* File info */}
-          <div className="bg-white p-4 rounded-lg border border-gray-200 flex items-center justify-between shadow-sm">
+          <div className="bg-gray-900 p-4 rounded-lg border border-gray-700 flex items-center justify-between shadow-sm">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-green-50 rounded-lg">
-                <svg className="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="p-2 bg-green-900/20 rounded-lg">
+                <svg className="h-6 w-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </div>
               <div>
-                <p className="text-sm font-semibold text-gray-900">{fileName}</p>
-                <p className="text-xs text-gray-500">{headers.length} colunas • {rows.length} linhas • Clique em uma linha para ver detalhes</p>
+                <p className="text-sm font-semibold text-gray-100">{fileName}</p>
+                <p className="text-xs text-gray-400">{headers.length} colunas • {rows.length} linhas • Clique em uma linha para ver detalhes</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
               <button 
                 onClick={handleReset}
-                className="px-4 py-2 text-sm font-medium text-red-600 bg-white border border-red-300 rounded-md hover:bg-red-50 hover:border-red-400 transition-all"
+                className="px-4 py-2 text-sm font-medium text-red-400 bg-gray-800 border border-red-500 rounded-md hover:bg-red-900/20 transition-all"
                 title="Remove o relatório salvo e limpa a tela"
               >
                 Excluir relatório
@@ -308,7 +308,7 @@ export default function CampaignAnalysis() {
           </div>
 
           {/* Search */}
-          <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+          <div className="bg-gray-900 p-4 rounded-lg border border-gray-700 shadow-sm">
             <div className="flex items-center gap-3">
               <div className="relative flex-1">
                 <input
@@ -319,44 +319,44 @@ export default function CampaignAnalysis() {
                     setSearchTerm(e.target.value)
                     setCurrentPage(1)
                   }}
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all"
+                  className="w-full pl-10 pr-4 py-2 bg-gray-800 border border-gray-700 rounded-md text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-900/30 transition-all"
                 />
                 <svg className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-gray-400">
                 {filteredRows.length} registros
               </div>
             </div>
           </div>
 
           {/* Data table */}
-          <div className="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden">
+          <div className="bg-gray-900 rounded-lg border border-gray-700 shadow-sm overflow-hidden">
             <div className="overflow-x-auto">
               <table className="min-w-full divide-y divide-gray-200">
-                <thead className="bg-gradient-to-r from-gray-50 to-gray-100">
+                <thead className="bg-gray-800">
                   <tr>
-                    <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider whitespace-nowrap">#</th>
+                    <th className="px-4 py-3 text-left text-xs font-semibold text-gray-300 uppercase tracking-wider whitespace-nowrap">#</th>
                     {headers.map(header => (
-                      <th key={header} className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider whitespace-nowrap">
+                      <th key={header} className="px-4 py-3 text-left text-xs font-semibold text-gray-300 uppercase tracking-wider whitespace-nowrap">
                         {header}
                       </th>
                     ))}
                   </tr>
                 </thead>
-                <tbody className="bg-white divide-y divide-gray-100">
+                <tbody className="bg-gray-900 divide-y divide-gray-800">
                   {paginatedRows.map((row, idx) => (
                     <tr 
                       key={idx} 
                       onClick={() => setSelectedRow(row)}
-                      className="hover:bg-blue-100 transition-colors cursor-pointer"
+                      className="hover:bg-gray-800 transition-colors cursor-pointer"
                     >
-                      <td className="px-4 py-3 text-sm text-gray-500 font-medium whitespace-nowrap">
+                      <td className="px-4 py-3 text-sm text-gray-400 font-medium whitespace-nowrap">
                         {(currentPage - 1) * rowsPerPage + idx + 1}
                       </td>
                       {headers.map(header => (
-                        <td key={header} className="px-4 py-3 text-sm text-gray-900 whitespace-nowrap">
+                        <td key={header} className="px-4 py-3 text-sm text-gray-100 whitespace-nowrap">
                           {row[header] || <span className="text-gray-400">-</span>}
                         </td>
                       ))}
@@ -368,9 +368,9 @@ export default function CampaignAnalysis() {
             
             {/* Pagination */}
             {totalPages > 1 && (
-              <div className="bg-gray-50 px-4 py-3 flex items-center justify-between border-t border-gray-200">
+              <div className="bg-gray-900 px-4 py-3 flex items-center justify-between border-t border-gray-700">
                 <div>
-                  <p className="text-sm text-gray-700">
+                  <p className="text-sm text-gray-300">
                     Mostrando <span className="font-medium">{(currentPage - 1) * rowsPerPage + 1}</span> a{' '}
                     <span className="font-medium">{Math.min(currentPage * rowsPerPage, filteredRows.length)}</span> de{' '}
                     <span className="font-medium">{filteredRows.length}</span> resultados
@@ -380,14 +380,14 @@ export default function CampaignAnalysis() {
                   <button
                     onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
                     disabled={currentPage === 1}
-                    className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-4 py-2 text-sm font-medium text-gray-200 bg-gray-800 border border-gray-700 rounded-md hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     Anterior
                   </button>
                   <button
                     onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
                     disabled={currentPage === totalPages}
-                    className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-4 py-2 text-sm font-medium text-gray-200 bg-gray-800 border border-gray-700 rounded-md hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     Próxima
                   </button>
