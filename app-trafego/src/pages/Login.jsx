@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
-import './Login.css'
 
 export default function Login() {
   const [username, setUsername] = useState('')
@@ -36,35 +35,46 @@ export default function Login() {
   }
 
   return (
-    <div className="login-container">
-      <form onSubmit={handleSubmit} className="login-form">
-        <h1>Login</h1>
+    <div className="fixed inset-0 flex items-center justify-center bg-gradient-to-br from-blue-50 to-purple-50 p-4">
+      <form onSubmit={handleSubmit} className="w-full max-w-md bg-white rounded-2xl shadow-2xl p-8 md:p-10">
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">Login</h1>
         
-        {error && <div className="error-message">{error}</div>}
+        {error && (
+          <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-4 text-sm">
+            {error}
+          </div>
+        )}
         
-        <div className="form-group">
-          <label htmlFor="username">Usuário</label>
+        <div className="mb-4">
           <input
             type="text"
             id="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
+            placeholder="Usuário"
+            autoComplete="username"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-base"
           />
         </div>
-        
-        <div className="form-group">
-          <label htmlFor="password">Senha</label>
+        <div className="mb-6">
           <input
             type="password"
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            placeholder="Senha"
+            autoComplete="current-password"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-base"
           />
         </div>
         
-        <button type="submit" disabled={isLoading}>
+        <button 
+          type="submit" 
+          disabled={isLoading}
+          className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed text-base md:text-lg"
+        >
           {isLoading ? 'Entrando...' : 'Entrar'}
         </button>
       </form>
