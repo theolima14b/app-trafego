@@ -70,92 +70,92 @@ export default function UTMGenerator() {
   }
 
   return (
-    <div className="max-w-[1100px] w-full sm:w-[85vw] md:w-[70vw] lg:w-[60vw] xl:w-[55vw] mx-auto mt-4 md:mt-8 bg-white p-6 md:p-8 rounded-xl shadow-md border-2 border-gray-200 text-left" role="region" aria-label="Gerador de UTM">
+    <div className="max-w-[1100px] w-full sm:w-[85vw] md:w-[70vw] lg:w-[60vw] xl:w-[55vw] mx-auto mt-4 md:mt-8 bg-gray-900 p-6 md:p-8 rounded-xl shadow-md border border-gray-700 text-left" role="region" aria-label="Gerador de UTM">
       <div className="mb-4">
-        <h1 className="text-xl text-gray-900 mb-1">Gerador de UTM</h1>
-        <p className="text-sm text-gray-600">Preencha os campos abaixo para gerar sua URL com parâmetros UTM</p>
+        <h1 className="text-xl text-gray-100 mb-1">Gerador de UTM</h1>
+        <p className="text-sm text-gray-400">Preencha os campos abaixo para gerar sua URL com parâmetros UTM</p>
       </div>
 
   <div className="grid grid-cols-2 gap-x-6 gap-y-4 mt-4">
         <div className="col-span-2 flex flex-col gap-1.5">
-          <label htmlFor="siteUrl" className="text-sm text-gray-700">URL do Site *</label>
+          <label htmlFor="siteUrl" className="text-sm text-gray-300">URL do Site *</label>
           <input 
             id="siteUrl" 
             name="siteUrl" 
             value={form.siteUrl} 
             onChange={handleChange} 
             placeholder="https://exemplo.com/pagina"
-            className="w-full h-[38px] px-2.5 border border-gray-300 rounded-md text-[0.95rem] bg-white focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all"
+            className="w-full h-[38px] px-2.5 bg-gray-800 border border-gray-700 rounded-md text-[0.95rem] text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-900/30 transition-all"
           />
         </div>
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="utmSource" className="text-sm text-gray-700">Fonte da Campanha *</label>
+          <label htmlFor="utmSource" className="text-sm text-gray-300">Fonte da Campanha *</label>
           <input 
             id="utmSource" 
             name="utmSource" 
             value={form.utmSource} 
             onChange={handleChange} 
             placeholder="ex: google, facebook"
-            className="w-full h-[38px] px-2.5 border border-gray-300 rounded-md text-[0.95rem] bg-white focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all"
+            className="w-full h-[38px] px-2.5 bg-gray-800 border border-gray-700 rounded-md text-[0.95rem] text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-900/30 transition-all"
           />
         </div>
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="utmMedium" className="text-sm text-gray-700">Mídia *</label>
+          <label htmlFor="utmMedium" className="text-sm text-gray-300">Mídia *</label>
           <input 
             id="utmMedium" 
             name="utmMedium" 
             value={form.utmMedium} 
             onChange={handleChange} 
             placeholder="ex: cpc, social, email"
-            className="w-full h-[38px] px-2.5 border border-gray-300 rounded-md text-[0.95rem] bg-white focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all"
+            className="w-full h-[38px] px-2.5 bg-gray-800 border border-gray-700 rounded-md text-[0.95rem] text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-900/30 transition-all"
           />
         </div>
         <div className="col-span-2 flex flex-col gap-1.5">
-          <label htmlFor="utmCampaign" className="text-sm text-gray-700">Nome da Campanha *</label>
+          <label htmlFor="utmCampaign" className="text-sm text-gray-300">Nome da Campanha *</label>
           <input 
             id="utmCampaign" 
             name="utmCampaign" 
             value={form.utmCampaign} 
             onChange={handleChange} 
             placeholder="ex: lancamento_q4"
-            className="w-full h-[38px] px-2.5 border border-gray-300 rounded-md text-[0.95rem] bg-white focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all"
+            className="w-full h-[38px] px-2.5 bg-gray-800 border border-gray-700 rounded-md text-[0.95rem] text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-900/30 transition-all"
           />
         </div>
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="utmTerm" className="text-sm text-gray-700">Termo</label>
+          <label htmlFor="utmTerm" className="text-sm text-gray-300">Termo</label>
           <input 
             id="utmTerm" 
             name="utmTerm" 
             value={form.utmTerm} 
             onChange={handleChange} 
             placeholder="ex: palavra-chave"
-            className="w-full h-[38px] px-2.5 border border-gray-300 rounded-md text-[0.95rem] bg-white focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all"
+            className="w-full h-[38px] px-2.5 bg-gray-800 border border-gray-700 rounded-md text-[0.95rem] text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-900/30 transition-all"
           />
         </div>
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="utmContent" className="text-sm text-gray-700">Conteúdo</label>
+          <label htmlFor="utmContent" className="text-sm text-gray-300">Conteúdo</label>
           <input 
             id="utmContent" 
             name="utmContent" 
             value={form.utmContent} 
             onChange={handleChange} 
             placeholder="ex: variação do criativo"
-            className="w-full h-[38px] px-2.5 border border-gray-300 rounded-md text-[0.95rem] bg-white focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all"
+            className="w-full h-[38px] px-2.5 bg-gray-800 border border-gray-700 rounded-md text-[0.95rem] text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-900/30 transition-all"
           />
         </div>
       </div>
 
       {allFieldsComplete && (
-        <div className="mt-6 p-4 bg-gray-50 border border-gray-200 rounded-lg">
+        <div className="mt-6 p-4 bg-gray-800 border border-gray-700 rounded-lg">
           <div className="col-span-2 flex flex-col gap-1.5">
-            <label htmlFor="generatedLink" className="text-sm text-gray-700">URL gerada</label>
+            <label htmlFor="generatedLink" className="text-sm text-gray-300">URL gerada</label>
             <div className="flex items-center gap-2 w-full">
               <input 
                 id="generatedLink"
                 type="text" 
                 value={generatedUrl} 
                 readOnly 
-                className="flex-1 h-[38px] px-2.5 border border-gray-300 rounded-md text-[0.95rem] bg-white text-gray-700 font-mono"
+                className="flex-1 h-[38px] px-2.5 bg-gray-900 border border-gray-700 rounded-md text-[0.95rem] text-gray-200 font-mono"
               />
               <button 
                 onClick={handleCopy} 
@@ -177,7 +177,7 @@ export default function UTMGenerator() {
               </button>
             </div>
           </div>
-          {copied && <p className="mt-2 text-sm text-green-500 font-medium animate-fade-in">Link copiado!</p>}
+          {copied && <p className="mt-2 text-sm text-green-400 font-medium animate-fade-in">Link copiado!</p>}
         </div>
       )}
     </div>
