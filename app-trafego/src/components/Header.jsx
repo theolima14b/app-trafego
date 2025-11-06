@@ -10,7 +10,7 @@ export default function Header() {
 
   return (
     <header className="main-header">
-      <span className="main-header__title">Rota de Conversão</span>
+      <span className="main-header__title">Copiloto de Conversão</span>
       <button
         className="side-menu__hamburger main-header__hamburger"
         aria-label="Abrir menu"
